@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { Container, Typography, Card, CardMedia, CardContent, Chip, Button, CircularProgress } from '@mui/material';
 import api from '../utils/axios';
