@@ -16,20 +16,18 @@ import PublicRoute from './components/PublicRoute';
 import ProductDetails from './components/ProductDetails';
 
 const AppContent = () => {
-  const { darkMode } = useTheme();
-
-  const theme = createTheme({
+const theme = createTheme({
   palette: {
     mode: darkMode ? 'dark' : 'light',
     primary: {
-      main: '#1976D2', 
+      main: '#1976D2',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#EC407A', 
+      main: '#EC407A',
     },
     background: {
-      default: darkMode ? '#121212' : '#F3F6F9', 
+      default: darkMode ? '#121212' : '#F3F6F9',
       paper: darkMode ? '#1e1e1e' : '#ffffff',
     },
     text: {
@@ -59,17 +57,6 @@ const AppContent = () => {
     },
   },
 });
-
-      MuiAppBar: {
-        styleOverrides: {
-          root: {
-            backgroundColor: darkMode ? '#1e1e1e' : '#CCDC28',
-            color: darkMode ? '#ffffff' : '#000000',
-          },
-        },
-      },
-    },
-  });
 
   return (
     <MUIThemeProvider theme={theme}>
