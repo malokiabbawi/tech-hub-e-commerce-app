@@ -13,38 +13,53 @@ import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import ProtectedRoute from './components/ProtectedRoute';
 import PublicRoute from './components/PublicRoute';
-import ProductDetails from './components/ProductDetails'; // ✅ تمت الإضافة
+import ProductDetails from './components/ProductDetails';
 
 const AppContent = () => {
   const { darkMode } = useTheme();
 
   const theme = createTheme({
-    palette: {
-      mode: darkMode ? 'dark' : 'light',
-      primary: {
-        main: '#CCDC28',
-        contrastText: '#000000',
-      },
-      secondary: {
-        main: darkMode ? '#CCDC28' : '#1976d2',
-      },
-      background: {
-        default: darkMode ? '#121212' : '#ffffff',
-        paper: darkMode ? '#1e1e1e' : '#ffffff',
-      },
+  palette: {
+    mode: darkMode ? 'dark' : 'light',
+    primary: {
+      main: '#1976D2', 
+      contrastText: '#ffffff',
     },
-    components: {
-      MuiButton: {
-        styleOverrides: {
-          contained: {
-            backgroundColor: '#CCDC28',
-            color: '#000000',
-            '&:hover': {
-              backgroundColor: '#b8c424',
-            },
+    secondary: {
+      main: '#EC407A', 
+    },
+    background: {
+      default: darkMode ? '#121212' : '#F3F6F9', 
+      paper: darkMode ? '#1e1e1e' : '#ffffff',
+    },
+    text: {
+      primary: darkMode ? '#ffffff' : '#1A2027',
+      secondary: darkMode ? '#cccccc' : '#4F5B62',
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          backgroundColor: '#1976D2',
+          color: '#ffffff',
+          '&:hover': {
+            backgroundColor: '#115293',
           },
         },
       },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: darkMode ? '#1e1e1e' : '#1976D2',
+          color: '#ffffff',
+        },
+      },
+    },
+  },
+});
+
       MuiAppBar: {
         styleOverrides: {
           root: {
@@ -65,7 +80,7 @@ const AppContent = () => {
           <ProtectedRoute>
             <Routes>
               <Route path="/products" element={<Products />} />
-              <Route path="/products/:productId" element={<ProductDetails />} /> {/* ✅ تمت الإضافة */}
+              <Route path="/products/:productId" element={<ProductDetails />} />
               <Route path="/users" element={<Users />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
