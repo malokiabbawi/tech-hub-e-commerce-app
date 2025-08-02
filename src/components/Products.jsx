@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { ShoppingCart, ViewModule, ViewList } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import api from '../utils/axios';
 
 const Products = () => {
