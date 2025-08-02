@@ -16,7 +16,7 @@ import PublicRoute from './components/PublicRoute';
 import ProductDetails from './components/ProductDetails';
 
 const AppContent = () => {
-  const { darkMode } = useTheme(); // ✅ أضف هذا السطر
+  const { darkMode } = useTheme(); 
   const theme = createTheme({
     palette: {
       mode: darkMode ? 'dark' : 'light',
