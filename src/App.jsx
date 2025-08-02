@@ -16,13 +16,15 @@ import PublicRoute from './components/PublicRoute';
 import ProductDetails from './components/ProductDetails';
 
 const AppContent = () => {
-const theme = createTheme({
-  palette: {
-    mode: darkMode ? 'dark' : 'light',
-    primary: {
-      main: '#1976D2',
-      contrastText: '#ffffff',
-    },
+  const { darkMode } = useTheme(); // ✅ أضف هذا السطر
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? 'dark' : 'light',
+      primary: {
+        main: '#1976D2',
+        contrastText: '#ffffff',
+      },
+    
     secondary: {
       main: '#EC407A',
     },
